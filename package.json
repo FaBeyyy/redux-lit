@@ -6,11 +6,13 @@
   "scripts": {
 
   },
+  "keywords": ["redux", "lit-element", "lit-html"],
   "author": "Fabio Fesel, GitHub@FaBeyyy",
   "license": "ISC",
   "repository": {
     "type" : "git",
-    "url" : ""
+    "url" : "https://github.com/FaBeyyy/redux-lit.git"
   },
-  "homepage": ""
+  "homepage": "https://github.com/FaBeyyy/redux-lit"
 }
+ 
