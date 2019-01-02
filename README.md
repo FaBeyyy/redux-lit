@@ -34,3 +34,10 @@ export default connect(
 )(TestElement)
 ```
 Every property returned from mapStateToProps() is now added to the class properties and as soon as you change the state LitElement automatically re-renders the component.
+
+## Where is the `disaptch()` method added?
+The dispatch method is added to the class prototype, so calling:
+```js
+this.dispatch(someAction())
+```
+does the job
