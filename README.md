@@ -40,4 +40,4 @@ The dispatch method is added to the class prototype, so calling:
 ```js
 this.dispatch(someAction())
 ```
-does the job
+in a LitElement component does the job.
