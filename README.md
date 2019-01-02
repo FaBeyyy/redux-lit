@@ -1,3 +1,4 @@
+# Redux for LitElement
 ## Installation
 `npm install --save redux-lit`
 ## Quick Start
