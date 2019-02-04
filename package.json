@@ -4,15 +4,29 @@
   "description": "Redux bindings for Lit-Element implementing the connect function functionality similiar to react-redux",
   "main": "index.js",
   "scripts": {
-
+    "test": "jest --coverage"
   },
-  "keywords": ["redux", "lit-element", "lit-html"],
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/*"
+    ]  
+  },
+  "keywords": [
+    "redux",
+    "lit-element",
+    "lit-html"
+  ],
   "author": "Fabio Fesel, GitHub@FaBeyyy",
   "license": "ISC",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/FaBeyyy/redux-lit.git"
+    "type": "git",
+    "url": "https://github.com/FaBeyyy/redux-lit.git"
   },
-  "homepage": "https://github.com/FaBeyyy/redux-lit"
+  "homepage": "https://github.com/FaBeyyy/redux-lit",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "jest": "^24.0.0"
+  }
 }
- 
