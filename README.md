@@ -28,10 +28,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = { increment, decrement, reset }
 
-export default connect(
-  mapStateToProps,
-  'test-html-element'  // Name of the custom html element that should be defined
-)(TestElement)
+export default connect(mapStateToProps)(TestElement, 'test-html-element')  // Name of the custom html element that should be defined)
 ```
 Every property returned from mapStateToProps() is now added to the class properties and as soon as you change the state LitElement automatically re-renders the component.
 
