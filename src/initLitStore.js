@@ -1,4 +1,4 @@
 export function initLitStore(store) {
-    window.litStore = store;
-    return store;
+    if (!window.litStore) window.litStore = store;
+    return window.litStore;
 }

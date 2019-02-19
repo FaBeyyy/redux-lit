@@ -14,15 +14,20 @@ export const connect = (mapStateToProps) => (ClassName, componentName) => {
         ClassName.createProperty(key);
     });
 
-    const userDefinedFirstUpdated = ClassName.prototype.firstUpdated;
+    
+    let userDefinedFirstUpdated = ClassName.prototype.firstUpdated;
 
     ClassName.prototype.firstUpdated = function(updatedProperties) {
         propKeys.forEach(key => {
             this[key] = props[key];
             store.subscribe(() => {
-                if (this[key] !== store.getState()[key]) this[key] = store.getState()[key];
+                const updatedProps = mapStateToProps(store.getState());
+
+                if (this[key] !== updatedProps[key]) this[key] = updatedProps[key];
             })
         });
+
+        userDefinedFirstUpdated = userDefinedFirstUpdated.bind(this);
         userDefinedFirstUpdated(updatedProperties);
     }
 
