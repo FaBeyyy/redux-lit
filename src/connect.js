@@ -20,10 +20,19 @@ export const connect = (mapStateToProps) => (ClassName, componentName) => {
     ClassName.prototype.firstUpdated = function(updatedProperties) {
         propKeys.forEach(key => {
             this[key] = props[key];
+            const updatedProps = mapStateToProps(window.litStore.getState());
+            if (this[key] !== updatedProps[key]) this[key] = updatedProps[key];
             store.subscribe(() => {
                 const updatedProps = mapStateToProps(store.getState());
 
-                if (this[key] !== updatedProps[key]) this[key] = updatedProps[key];
+                if (this[key] !== updatedProps[key]) {
+                    if (typeof updatedProps[key] === 'object') {
+                        this[key] = {...updatedProps[key]};
+                    }
+                    
+                } else {
+                    this[key] = updatedProps[key];
+                }
             })
         });
 

@@ -1,6 +1,6 @@
 {
   "name": "redux-lit",
-  "version": "0.0.5",
+  "version": "1.0.1",
   "description": "Redux bindings for Lit-Element implementing the connect function functionality similiar to react-redux",
   "main": "index.js",
   "scripts": {
